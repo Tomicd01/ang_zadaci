@@ -1,0 +1,27 @@
+<div class="main">
+  <div class="box">
+
+    <div id="slide" #slide>
+      <div class="cards" *ngFor="let slide of slideArray">
+        <div class="profile">
+          <img src="{{ slide.image }}" alt="Image"/>
+          <div class="name">
+            <h5>{{ slide.name }}</h5>
+            <p>{{ slide.job }}</p>
+          </div>
+        </div>
+        <div class="recension">
+          <p>{{ slide.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button type="button" class="btns" (click)="prev()"><i class="bi bi-arrow-left"></i></button>
+    <button type="button" class="btns" (click)="next()">Next</button>
+  </div>
+
+  <div class="extra"></div>
+  <span>{{ slideNumber }}/{{ slideArray.length }}</span>
+</div>
