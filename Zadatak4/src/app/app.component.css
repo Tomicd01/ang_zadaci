@@ -1,0 +1,35 @@
+.box{
+    position: fixed;
+    display: flex;
+    width: 500px;
+    height: 300px;
+    top: 30%;
+    left: 30%;
+}
+
+.navigation{
+    display: grid;
+}
+ul{
+    list-style-type: none;
+}
+.tab{
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+}
+.tab.active {
+    background-color: rgb(169, 169, 169);
+    color: white;
+    border-radius: 10%;
+}
+li{
+    margin-top: 8px;
+}
+#tab-contents{
+    width: 100%;
+    height: 100%;
+}
+#tabs{
+    padding-left: 0px;
+}
