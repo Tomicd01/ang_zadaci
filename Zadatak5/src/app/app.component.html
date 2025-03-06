@@ -1,0 +1,15 @@
+<div class="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="questions" *ngFor="let q of faqs; let i = index">
+    <div class="question" [ngClass]="{'expanded': expandedQuestions[i]}">
+      <div class="upper">
+        <h4 [style.color]="expandedQuestions[i] ? 'blue' : 'black'">{{ q.question }}</h4>
+        <a (click)="expand(i)">
+          <i *ngIf="!expandedQuestions[i]" [style.color]="expandedQuestions[i] ? 'blue' : 'black'" class="bi bi-plus"></i>
+          <i *ngIf="expandedQuestions[i]" [style.color]="expandedQuestions[i] ? 'blue' : 'black'" class="bi bi-dash"></i>
+        </a>
+      </div>
+      <p *ngIf="expandedQuestions[i]">{{ q.answer }}</p>
+    </div>
+  </div>
+</div>
