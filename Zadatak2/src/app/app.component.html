@@ -1,0 +1,31 @@
+<div class="model">
+  <div class="title">
+    <div class="left">
+      <h4>Recommended movies</h4>
+      <span>Movie recommendations tailored just for you</span>
+    </div>
+    <div class="right">
+      <button class="btn btn-primary" (click)="resetMovies()"> <i class="bi bi-arrow-clockwise"></i> Reset recommendations</button>
+    </div>
+  </div>
+  <div class="movies">
+    <div class="banner" *ngFor="let movie of movies">
+      <div class="image"><img [src]="'assets/img/' + movie.img + '.png'" /></div>
+      <h5>{{ movie.title }}</h5>
+      <div class="stars">
+        <i class="bi bi-star-fill" *ngFor="let star of [].constructor(movie.stars)"></i>
+      </div>
+      <button class="notinterested" 
+        (mouseenter)="onHover(movie.id, true)" 
+        (mouseleave)="onHover(movie.id, false)"
+        (click)="removeMovie(movie.id)">
+        <i class="bi bi-ban"></i> 
+        <span *ngIf="hoverStates[movie.id]"> Not Interested</span>
+      </button>
+    </div>
+
+    <span *ngIf="movies.length === 0" class="no-movies">
+      <i class="bi bi-emoji-frown"></i> Unfortunately we have no more recommendations for you.
+    </span>
+  </div>
+</div>
