@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="title">
+    <h5>My recent transactions</h5>
+    <span>{{ transactions.length }} transactions</span>
+  </div>
+
+  
+  <div *ngFor="let transaction of transactions" class="transaction">
+    <div class="transactionTitle">
+      <b>{{ transaction.title }}</b>
+    </div>
+
+    <div class="transactionRow">
+      <span>{{ transaction.type }}</span>
+      <div class="amount">{{ transaction.amount }}$</div>
+    </div>
+
+    <div class="transactionRow">
+      <span>{{ transaction.card }}</span>
+      <span>{{ transaction.date }}</span>
+    </div>
+
+  </div>
+  
+
+  <button (click)="clearTransactions()">Clear Transactions</button>
+
+</div>
