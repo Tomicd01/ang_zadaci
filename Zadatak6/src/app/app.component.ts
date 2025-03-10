@@ -11,4 +11,9 @@ import { NgIf, NgFor } from '@angular/common';
 export class AppComponent {
   title = 'Zadatak6';
   isExpanded : boolean = false;
+
+  expand(event : any){
+    event.target.style.width = "100px";
+    this.isExpanded = true;
+  }
 }
