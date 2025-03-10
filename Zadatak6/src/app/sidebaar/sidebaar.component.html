@@ -1,4 +1,4 @@
-<div class="sidebar" *ngIf="!isExpanded; else expanded" (mouseenter)="expand($event)">  
+<div class="sidebar" *ngIf="!isExpanded; else expanded" (mouseenter)="expand($event)" [@expandCollapse]="isExpanded ? 'expanded' : 'collapsed'" >  
     <div class="bar">
       <div class="image">
         <img src="https://images.vexels.com/media/users/3/134780/isolated/preview/f48f7caf77c310742b788d18b2743fa8-silhouette-emblem-shield.png" />
@@ -41,20 +41,20 @@
     </div>
 
     <div class="expicons">
-        <div class="section" (click)="navigateTo('/home')"><i class="bi bi-house-door"></i>Home</div>
-        <div class="section" (click)="navigateTo('/calendar')"><i class="bi bi-calendar"></i>Calendar</div>
-        <div class="section" (click)="navigateTo('/messages')"><i class="bi bi-chat-left"></i>Messages</div>
-        <div class="section" (click)="navigateTo('/projects')"><i class="bi bi-suitcase-lg"></i>Projects</div>
-        <div class="section" (click)="navigateTo('/progress')"><i class="bi bi-bar-chart-fill"></i>Progress</div>
-        <div class="section" (click)="navigateTo('/goals')"><i class="bi bi-bullseye"></i>Goals</div>    
+        <div class="section" (click)="navigateTo('/home')" [ngClass]="{ 'active': activeRoute === '/home' }"><i class="bi bi-house-door"></i>Home</div>
+        <div class="section" (click)="navigateTo('/calendar')" [ngClass]="{ 'active': activeRoute === '/calendar' }"><i class="bi bi-calendar"></i>Calendar</div>
+        <div class="section" (click)="navigateTo('/messages')" [ngClass]="{ 'active': activeRoute === '/messages' }"><i class="bi bi-chat-left"></i>Messages</div>
+        <div class="section" (click)="navigateTo('/projects')" [ngClass]="{ 'active': activeRoute === '/projects' }"><i class="bi bi-suitcase-lg"></i>Projects</div>
+        <div class="section" (click)="navigateTo('/progress')" [ngClass]="{ 'active': activeRoute === '/progress' }"><i class="bi bi-bar-chart-fill"></i>Progress</div>
+        <div class="section" (click)="navigateTo('/goals')" [ngClass]="{ 'active': activeRoute === '/goals' }"><i class="bi bi-bullseye"></i>Goals</div>    
     </div>
 
     <div class="notifications">
-        <div class="section" (click)="navigateTo('/notifications')"><i class="bi bi-bell"></i>Notifications</div>
-        <div class="section" (click)="navigateTo('/settings')"><i class="bi bi-gear"></i>Settings</div>
+        <div class="section" (click)="navigateTo('/notifications')" [ngClass]="{ 'active': activeRoute === '/notifications' }"><i class="bi bi-bell"></i>Notifications</div>
+        <div class="section" (click)="navigateTo('/settings')" [ngClass]="{ 'active': activeRoute === '/settings' }"><i class="bi bi-gear"></i>Settings</div>
     </div>
     <div class="user">
-        <div class="section" (click)="navigateTo('/profile')"><i class="bi bi-person-circle"></i>User name</div>
+        <div class="section" (click)="navigateTo('/profile')" [ngClass]="{ 'active': activeRoute === '/profile' }"><i class="bi bi-person-circle"></i>User name</div>
     </div>
 </div>
 </ng-template>
