@@ -5,7 +5,7 @@
     position: sticky;
     left: 0;
     top: 0;
-    height: 100vh;
+    height: 98%;
     box-shadow: 2px 2px 2px #888888;
     align-items: center;
     padding: 10px;
@@ -64,19 +64,20 @@ a i{
     margin-top: 15px; 
 }
 
-.user{
+.sidebar .user{
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: absolute;
+
     bottom: 0;
     left: 0;
     background-color: #d5d5d5;
     color: white;
     margin-top: 50px;
     font-size: 1.5rem;
-    width: calc(100% + 15px);
-    height: 86px;
+    width: 70px;
+    height: 10%;
 }
 .user a i{
     color: white;
@@ -93,8 +94,20 @@ a i{
 .expandedbar .image{
     display: flex;
     flex-direction: row;
+    position: relative;
     width: 100%;
     justify-content: flex-start;
+}
+
+.expandedbar .image i{
+    position: absolute;
+    right: 10px;
+    color: #888;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.expandedbar .image i:hover{
+    color: #000;
 }
 .expandedbar .search{
     position: relative;
@@ -137,11 +150,15 @@ a i{
     align-items: center;
     color: #888;
     font-size: 1.1rem;
+    cursor: pointer;
 }
 .expicons .section i{
     font-size: 1.5rem;
     color: #888;
     margin-right: 10px;
+}
+.expicons .section:hover{
+    color: black;
 }
 
 .expandedbar .notifications{
@@ -162,8 +179,11 @@ a i{
     align-items: center;
     color: #888;
     font-size: 1.1rem;
+    cursor: pointer;
 }
-
+.expandedbar .notifications .section:hover{
+    color: #000;
+}
 .expandedbar .user{
     display: flex;
     align-items: center;
@@ -178,9 +198,13 @@ a i{
     width: 100%;
     height: 86px;
     color: black;
+    cursor: pointer;
 }
 .expandedbar .user .section{
     margin-left: 15px;
+}
+.expandedbar .user .section:hover{
+    color: white;
 }
 .expandedbar .user .section i{
     margin-right: 10px;

@@ -5,7 +5,7 @@ import { SidebaarComponent } from './sidebaar/sidebaar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgIf, NgFor,SidebaarComponent],
+  imports: [RouterOutlet, NgIf, NgFor, SidebaarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

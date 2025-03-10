@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgIf } from '@angular/common';
 
@@ -10,12 +10,16 @@ import { NgIf } from '@angular/common';
 })
 export class SidebaarComponent {
   isExpanded: boolean = false;
+  @ViewChild('shrink') shrinkIcon!: ElementRef;
 
   constructor(private router: Router) {}
 
   expand(event: any) {
-    event.target.style.width = "100px";
     this.isExpanded = true;
+  }
+
+  shrinkSideBar(){
+    this.isExpanded = false;
   }
 
   navigateTo(route: string) {

@@ -27,34 +27,35 @@
     </div>
   </div>
 
-  <ng-template #expanded>
-    <div class="expandedbar">
-      <div class="image">
+<ng-template #expanded>
+<div class="expandedbar">
+    <div class="image">
         <img src="https://images.vexels.com/media/users/3/134780/isolated/preview/f48f7caf77c310742b788d18b2743fa8-silhouette-emblem-shield.png" />
         <h4>Docket</h4>
-      </div>
-    
-      <div class="search">
+        <i class="bi bi-window-sidebar" (click)="shrinkSideBar()" #shrink></i>
+    </div>
+
+    <div class="search">
         <i class="bi bi-search"></i>
         <input type="text" placeholder="Search" />
-      </div>
-    
-      <div class="expicons">
-        <div class="section" ><i class="bi bi-house-door"></i>Home</div>
-        <div class="section"><i class="bi bi-calendar"></i>Calendar</div>
-        <div class="section"><i class="bi bi-chat-left"></i>Messages</div>
-        <div class="section"><i class="bi bi-suitcase-lg"></i>Projects</div>
-        <div class="section"><i class="bi bi-bar-chart-fill"></i>Progress</div>
-        <div class="section"><i class="bi bi-bullseye"></i>Goals</div>    
-      </div>
-    
-      <div class="notifications">
-        <div class="section"><i class="bi bi-bell"></i>Notifications</div>
-        <div class="section"><i class="bi bi-gear"></i>Settings</div>
-      </div>
-      <div class="user">
-        <div class="section"><i class="bi bi-person-circle"></i>User name</div>
-      </div>
     </div>
-  </ng-template>
+
+    <div class="expicons">
+        <div class="section" (click)="navigateTo('/home')"><i class="bi bi-house-door"></i>Home</div>
+        <div class="section" (click)="navigateTo('/calendar')"><i class="bi bi-calendar"></i>Calendar</div>
+        <div class="section" (click)="navigateTo('/messages')"><i class="bi bi-chat-left"></i>Messages</div>
+        <div class="section" (click)="navigateTo('/projects')"><i class="bi bi-suitcase-lg"></i>Projects</div>
+        <div class="section" (click)="navigateTo('/progress')"><i class="bi bi-bar-chart-fill"></i>Progress</div>
+        <div class="section" (click)="navigateTo('/goals')"><i class="bi bi-bullseye"></i>Goals</div>    
+    </div>
+
+    <div class="notifications">
+        <div class="section" (click)="navigateTo('/notifications')"><i class="bi bi-bell"></i>Notifications</div>
+        <div class="section" (click)="navigateTo('/settings')"><i class="bi bi-gear"></i>Settings</div>
+    </div>
+    <div class="user">
+        <div class="section" (click)="navigateTo('/profile')"><i class="bi bi-person-circle"></i>User name</div>
+    </div>
+</div>
+</ng-template>
 
