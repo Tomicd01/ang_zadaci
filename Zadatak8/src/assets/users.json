@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Marko Jovanović",
+    "title": "Software Engineer",
+    "email": "marko.jovanovic@example.com",
+    "role": "member"
+  },
+  {
+    "name": "Ana Petrović",
+    "title": "Product Manager",
+    "email": "ana.petrovic@example.com",
+    "role": "admin"
+  },
+  {
+    "name": "Miloš Nikolić",
+    "title": "Designer",
+    "email": "milos.nikolic@example.com",
+    "role": "member"
+  },
+  {
+    "name": "Ivana Savić",
+    "title": "HR Specialist",
+    "email": "ivana.savic@example.com",
+    "role": "owner"
+  },
+  {
+    "name": "Petar Ilić",
+    "title": "Data Scientist",
+    "email": "petar.ilic@example.com",
+    "role": "member"
+  }
+] 
