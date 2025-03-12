@@ -2,22 +2,26 @@
     a
     <div class="top">
         <div class="title">
-
+            <h4>Users</h4>
+            <p>A list of all the users in your account including their name, title, email and role</p>
         </div>
         <div class="button">
-            <button></button>
+            <button>Add user</button>
         </div>
     </div>
     <div class="table">
     <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th *ngFor="let key of keys">{{ key }}</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>John Doe</td>
+          <tr *ngFor="let user of users">
+            <td>{{ user.name }}</td>
+            <td>{{ user.title }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.role }}</td>
           </tr>
         </tbody>
     </table>
