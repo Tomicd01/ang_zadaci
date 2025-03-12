@@ -16,7 +16,7 @@ interface User {
   styleUrl: './table.component.css'
 })
 export class TableComponent  implements OnInit {
-  users: User[] = [];
+  users: any = [];
 
   constructor(private http: HttpClient) {}
 
@@ -25,9 +25,8 @@ export class TableComponent  implements OnInit {
   }
 
   loadUsers(): void {
-    this.http.get<User[]>('/assets/users.json').subscribe(data => {
+    this.http.get('/assets/users.json').subscribe(data => {
       this.users = data;
-      
     });
   }
 }
