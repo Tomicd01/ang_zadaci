@@ -3,7 +3,7 @@
     top: 40%;
     left: 20%;
     padding: 15px;
-    width: 800px;
+    width: 1000px;
 }
 .top{
     display: flex;
@@ -31,21 +31,34 @@
 table{
     width: 100%;
     border: 1px solid #888;
-    padding: 5px;
+    padding: 15px;
     border-collapse: collapse;
+    height: fit-content;
+    font-size: 0.8rem;
 }
 thead tr{
     background-color: #888;
 }
 thead tr th{
     text-align: left;
-    border: none !important;
+    border: none;
+    padding: 10px 5px;
 }
+
 
 td{
     text-align: left;
-    margin: 10px 5px;
+    padding: 10px 5px;
 }
 tbody tr{
     background-color: white;
+    border-bottom: 1px solid #dedede;
+}
+
+td.name{
+    
+}
+
+.other{
+    color: #a7a7a7;
 }

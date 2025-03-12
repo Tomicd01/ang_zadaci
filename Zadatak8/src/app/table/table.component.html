@@ -14,14 +14,16 @@
         <thead>
           <tr>
             <th *ngFor="let key of keys">{{ key }}</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let user of users">
-            <td>{{ user.name }}</td>
-            <td>{{ user.title }}</td>
-            <td>{{ user.email }}</td>
-            <td>{{ user.role }}</td>
+            <td class="name">{{ user.name }}</td>
+            <td class="other">{{ user.title }}</td>
+            <td class="other">{{ user.email }}</td>
+            <td class="other">{{ user.role }}</td>
+            <td><a href="">Edit</a></td>
           </tr>
         </tbody>
     </table>
