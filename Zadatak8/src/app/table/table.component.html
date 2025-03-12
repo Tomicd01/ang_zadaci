@@ -18,14 +18,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of users">
+          <tr *ngFor="let user of users; let i = index">
             <td class="name">{{ user.name }}</td>
             <td class="other">{{ user.title }}</td>
             <td class="other">{{ user.email }}</td>
             <td class="other">{{ user.role }}</td>
-            <td><a href="">Edit</a></td>
+            <td *ngIf="isEditable[i];else noteditable"><a href="">Edit</a></td>
           </tr>
         </tbody>
     </table>
     </div>
+    <ng-template #noteditable>
+        <td>Can't edit</td>
+    </ng-template>
 </div>
+
+

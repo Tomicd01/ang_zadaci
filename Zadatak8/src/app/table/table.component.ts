@@ -19,6 +19,7 @@ interface User {
 export class TableComponent implements OnInit {
   users: User[] = []; 
   keys : string[] = []
+  isEditable : boolean[] = [];
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -29,7 +30,15 @@ export class TableComponent implements OnInit {
     this.http.get<User[]>('/assets/users.json').subscribe(data => { 
       this.users = data;  
       this.keys = Object.keys(this.users[0])
-      console.log(this.keys);
+      this.users.forEach((element, index) => {
+        if(element.role != 'admin'){
+          this.isEditable[index] = true;
+        }
+        else{
+          this.isEditable[index] = false;
+        }
+      });
+      console.log(this.isEditable);
     });
   }
 }

@@ -14,6 +14,19 @@
 .top .button{
     display: flex;
     justify-content: center;
+    
+}
+.top button{
+    width: 110px;
+    background-color: rgb(94, 45, 255);
+    color: white;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.top button:hover{
+    background-color: rgb(84, 40, 229);
 }
 .title{
     width: fit-content;
@@ -30,14 +43,15 @@
 }
 table{
     width: 100%;
-    border: 1px solid #888;
+    border: 1px solid #cccccc;
     padding: 15px;
     border-collapse: collapse;
     height: fit-content;
     font-size: 0.8rem;
 }
 thead tr{
-    background-color: #888;
+    background-color: #eaeaea;
+    border-bottom: 2px solid #dedede;
 }
 thead tr th{
     text-align: left;
@@ -56,7 +70,7 @@ tbody tr{
 }
 
 td.name{
-    
+    font-weight: bold;
 }
 
 .other{
