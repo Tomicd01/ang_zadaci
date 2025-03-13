@@ -70,9 +70,20 @@ tbody tr{
 }
 
 td.name{
-    font-weight: bold;
+    
 }
 
 .other{
     color: #a7a7a7;
+}
+
+
+.bold{
+    font-weight: bold;
+    color: black;
+}
+
+.columnName{
+    cursor: pointer;
+    
 }

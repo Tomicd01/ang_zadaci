@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { OnInit } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgClass } from '@angular/common';
 
 interface User {
   name: string;
@@ -12,7 +12,7 @@ interface User {
 
 @Component({
   selector: 'app-table',
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, NgClass],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
@@ -20,6 +20,7 @@ export class TableComponent implements OnInit {
   users: User[] = []; 
   keys : string[] = []
   isEditable : boolean[] = [];
+  boldColumnName : any = "";
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -40,5 +41,12 @@ export class TableComponent implements OnInit {
       });
       console.log(this.isEditable);
     });
+  }
+
+  changeColor(event : any){
+    const target = event.target as HTMLElement;
+    const targeText = target.textContent?.trim();
+    this.boldColumnName = targeText?.toString();
+    console.log(this.boldColumnName);
   }
 }

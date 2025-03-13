@@ -1,5 +1,4 @@
 <div class="users">
-    a
     <div class="top">
         <div class="title">
             <h4>Users</h4>
@@ -13,16 +12,16 @@
     <table>
         <thead>
           <tr>
-            <th *ngFor="let key of keys">{{ key }}</th>
+            <th *ngFor="let key of keys" (click)="changeColor($event)" class="columnName" title="Click to bold column">{{ key }}</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let user of users; let i = index">
-            <td class="name">{{ user.name }}</td>
-            <td class="other">{{ user.title }}</td>
-            <td class="other">{{ user.email }}</td>
-            <td class="other">{{ user.role }}</td>
+            <td class="name" [ngClass]="{ 'bold': boldColumnName == 'name' }">{{ user.name }}</td>
+            <td class="other" [ngClass]="{ 'bold': boldColumnName == 'title' }">{{ user.title }}</td>
+            <td class="other" [ngClass]="{ 'bold': boldColumnName =='email' }">{{ user.email }}</td>
+            <td class="other" [ngClass]="{ 'bold': boldColumnName == 'role' }">{{ user.role }}</td>
             <td *ngIf="isEditable[i];else noteditable"><a href="">Edit</a></td>
           </tr>
         </tbody>
